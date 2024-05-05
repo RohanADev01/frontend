@@ -15,6 +15,9 @@ module.exports = {
       },
       spacing: {
         '1px': '1px',
+        '1/20': '5%',
+        '9/10': '90%',
+        '95/100': '95%',
       },
       borderImageSource: {
         'gradient-top': 'linear-gradient(to left, #3ccde1, #04eabc)',

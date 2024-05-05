@@ -3,8 +3,8 @@ import Sidebar from './Dashboard/Sidebar';
 import Dashboard from './Dashboard/Dashboard';
 import './App.css';
 
-function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth < 1140);
+function App () {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 1140);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,12 +26,14 @@ function App() {
   };
 
   return (
-    <div className="relative flex h-screen w-screen">
-      <div className="absolute inset-x-0 top-0 h-1px bg-top-gradient-border"></div>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="absolute inset-x-0 top-0 h-1px bg-top-gradient-border"></div>
-      <Dashboard isSidebarOpen={isSidebarOpen} />
-    </div>
+    <>
+      <div className="relative flex h-full w-screen">
+        <div className="absolute inset-x-0 top-0 h-1px bg-top-gradient-border"></div>
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className="absolute inset-x-0 top-0 h-1px bg-top-gradient-border"></div>
+        <Dashboard isSidebarOpen={isSidebarOpen} />
+      </div>
+    </>
   );
 }
 
